@@ -1,15 +1,15 @@
 <?php 
 session_start();
 
-$username = $_POST['username'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 
 require_once 'conn.php';
 
-$query = "SELECT * FROM users WHERE username = :username";
+$query = "SELECT * FROM users WHERE name = :name";
 
 $statement = $conn->prepare($query);
-$statement->execute([":username" => $username]);
+$statement->execute([":name" => $name]);
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 if($statement->rowCount() < 1){
@@ -21,6 +21,6 @@ if(!password_verify($password, $user['password'])){
 }
 
 $_SESSION['user_id'] = $user['id'];
-$_SESSION['username'] = $user['name'];
+$_SESSION['name'] = $user['name'];
 header("location: ../index.php");
 ?>
