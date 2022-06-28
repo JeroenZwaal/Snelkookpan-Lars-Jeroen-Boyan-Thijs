@@ -12,4 +12,4 @@ $dbUser = 'root';
 $dbPass = '';
 
 //De url waarop jouw project staat. Géén slash aan het einde.
-$base_url = 'http://Localhost/Snelkookpan-Lars-Jeroen-Boyan-Thijs';
+$base_url = 'http://Localhost/Snelkookpan-Lars-Jeroen-Boyan-Thijs/';
