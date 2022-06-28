@@ -91,14 +91,42 @@ textarea {
   padding: 0;
   margin: 0;
 }
-/* main.houses{
+main.houses{
   display: flex;
   margin: 0 auto;
   width: 80%;
-} */
+}
+.filter{
+  width: 40%;
+  border-right: 1px solid black;
+  margin-right: 50px;
+}
 .grid-container{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px 50px;
+}
+.house-container img{
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.house-container{
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid black;
+}
+.house-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+a.reserve{
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background: rgb(85, 85, 255);
+  margin: 5px 0;
 }
 header{
   background-color: rgb(85, 85, 255);
