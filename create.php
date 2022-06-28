@@ -12,12 +12,12 @@
 
 <head>
     <title>Huis / Nieuw</title>
-    <?php require_once '../head.php'; ?>
+    <?php require_once 'head.php'; ?>
 </head>
 
 <body>
 
-    <?php require_once '../header.php'; ?>
+    <?php require_once 'header.php'; ?>
 
     <div class="container">
         <h1>Nieuw huis toevoegen</h1>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Afbeelding: </label>
-                <input type="image" name="image" id="image" class="form-input">
+                <input type="file" name="image" id="image" class="form-input">
             </div>
             <div class="form-group">
                 <label for="price">Prijs: </label>
@@ -51,11 +51,10 @@
             </div>
             <div class="form-group">
                 <label for="status">Status:  </label>
-                <input type="text" name="Status" id="Status" class="form-input">
                 <select>
                     <option value="">Kies uw status</option>
-                    <option value="1">Vrij</option>
-                    <option value="2">Bezet</option>
+                    <option value="Vrij">Vrij</option>
+                    <option value="Bezet">Bezet</option>
                 </select>
             </div>
             <input type="submit" value="Verstuur huis">
