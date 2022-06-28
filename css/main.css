@@ -100,6 +100,27 @@ textarea {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+header{
+  background-color: rgb(85, 85, 255);
+  display: flex;
+  justify-content: space-between;
+  
+
+}
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin-right: 25px;
+  margin: 25px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+header h1{
+  color: white;
+  margin-left: 25px;
+}
 
 
 
