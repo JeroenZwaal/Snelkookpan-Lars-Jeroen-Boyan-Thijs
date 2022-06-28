@@ -26,30 +26,38 @@
             <input type="hidden" name="action" value="create">
             <input type="hidden" name="id" value="<?php echo $id; ?>">	
             <div class="form-group">
-                <label for="huis">Naam huis: </label>
-                <input type="text" name="huis" id="huis" class="form-input">
+                <label for="streetname">Straatnaam: </label>
+                <input type="text" name="streetname" id="streetname" class="form-input">
             </div>
             <div class="form-group">
-                <label for="type">Type</label>
-                <select name="type" id="type">
-                    <option value=""> Kies het type </option>
-                    <option value="Appartement"> Appartement </option>
-                    <option value="Alleenstaand Huis"> Alleenstaand Huis </option>
-                    <option value="Villa"> Villa </option>
-                    <option value="Rijtjeshuis"> Rijtjeshuis </option>
-                    <option value="Tweeonderéénkap"> Tweeonderéénkap </option>
-                    <option value="Penthouse"> Penthouse </option>
+                <label for="image">Afbeelding: </label>
+                <input type="image" name="image" id="image" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="price">Prijs: </label>
+                <input type="number" id="price" class="form-input"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Descriptie:</label>
+                <textarea name="description" id="description" class="form-input" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="area">Omgeving:  </label>
+                <input type="text" name="area" id="area" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Postcode:  </label>
+                <input type="text" name="zipcode" id="zipcode" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="status">Status:  </label>
+                <input type="text" name="Status" id="Status" class="form-input">
+                <select>
+                    <option value="">Kies uw status</option>
+                    <option value="1">Vrij</option>
+                    <option value="2">Bezet</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="date">Datum beschikbaar:</label>
-                <input type="date" name="date" id="date" class="form-input">
-            </div>
-            <div class="form-group">
-                <label for="overig">Overig:</label>
-                <textarea name="overige" id="overig" class="form-input" rows="4"></textarea>
-            </div>
-            
             <input type="submit" value="Verstuur huis">
 
         </form>
