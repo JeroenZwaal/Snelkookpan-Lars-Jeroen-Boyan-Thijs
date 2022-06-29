@@ -5,7 +5,7 @@
 		<nav>
 			<a href = "general.php">Algemene informatie</a>
 			<a href = "houses.php">Huizen</a>
-            <a href = "drinks.html">Dranken</a>
+            <a href = "reserveren.php">Reserveren</a>
 			<?php if(!isset($_SESSION['user_id'])): ?>
 				<a href="<?php echo $base_url;?>inlog.php">Inloggen</a>
 			<?php else: ?>  
