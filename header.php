@@ -9,8 +9,7 @@
 			<?php if(!isset($_SESSION['user_id'])): ?>
 				<a href="<?php echo $base_url;?>inlog.php">Inloggen</a>
 			<?php else: ?>  
-				<a href="">Hallo </a>
-				<a href=""><?php echo $_SESSION['username'] ?></a> | 
+				<a href=""><?php echo $_SESSION['name'] ?></a> | 
 				<a href="<?php echo $base_url;?>logout.php">Uitloggen</a>
 			<?php endif;?>  
 		</nav>
