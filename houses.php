@@ -38,6 +38,10 @@
     
         <div class="grid-container">
             <?php 
+            if(!isset($_SESSION['query']))
+            {
+                $_SESSION['query'] = "SELECT * FROM houses WHERE status = 0";
+            }
             require_once 'backend/conn.php';
             $query = $_SESSION['query'];
             $statement = $conn->prepare($query);
@@ -57,7 +61,7 @@
                             <p>&euro;<?php echo number_format($house['price'], 0, ",", ".") . "/week"; ?></p>
                         </div>
                         <div class="house-info-column">
-                            <a class="reserve" href="">Reserveer</a>
+                            <a class="reserve" href="reserveren.php?id=<?php echo $house['id']; ?>">Reserveer</a>
                         </div>
                     </div>
                     <p><?php echo $house['description']; ?></p>
