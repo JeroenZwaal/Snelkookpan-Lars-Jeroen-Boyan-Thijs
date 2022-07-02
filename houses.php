@@ -15,15 +15,15 @@
         <div class="filter">
             <p>Filter opties</p>
             <form action="backend/filterController.php" method="post">
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="location">Locatie</label>
                     <input class="input" type="text" name="location" id="location" placeholder="locatie">
                 </div>
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="rooms">Kamers</label>
                     <input class="input" type="number" name="rooms" id="rooms" placeholder="kamers">
                 </div>
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="price">Prijs</label>
                     <div>
                         <input class="price-input" type="number" name="price_min" id="price_min" placeholder="min">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="action" value="filter">
-                <input class="submit" type="submit">
+                <input class="submit" type="submit" value="Filteren">
             </form>
 
         </div>

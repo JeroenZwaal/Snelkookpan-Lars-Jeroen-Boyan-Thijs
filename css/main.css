@@ -170,7 +170,7 @@ footer p{
 .footerContact{
   flex-direction: column;
 }
-.form-group{
+.form-group-house{
   display: flex;
   justify-content: space-between;
   margin-right: 20px;
