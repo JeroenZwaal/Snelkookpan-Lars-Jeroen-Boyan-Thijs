@@ -39,6 +39,10 @@
         <div class="grid-container">
             <?php 
             require_once 'backend/conn.php';
+            if (!isset($_SESSION['query']))
+            {
+                $_SESSION['query'] = "SELECT * FROM houses";
+            }
             $query = $_SESSION['query'];
             $statement = $conn->prepare($query);
             $statement->execute();
@@ -67,6 +71,7 @@
             ?>
         </div>
     </main>
+    <?php require_once 'footer.php'; ?>
 </body>
 
 </html>
