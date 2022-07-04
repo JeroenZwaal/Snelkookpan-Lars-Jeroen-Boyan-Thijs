@@ -16,11 +16,24 @@
         <h1>Snelkookpan / Reserveren / Nieuw</h1>
 
         <?php
-            require_once 'backend/conn.php';
-            $query = "SELECT * FROM houses WHERE id = :id";
-            $statement = $conn->prepare($query);
-            $statement->execute([":id" => $_GET['id']]);
-            $house = $statement->fetch(PDO::FETCH_ASSOC);
+            if (!isset($_GET['id']))
+            {
+                $zipcode = "";
+                $street = "";
+            }
+            else
+            {
+                $id = $_GET['id'];
+                require_once 'backend/conn.php';
+                $query = "SELECT * FROM houses WHERE id = :id";
+                $statement = $conn->prepare($query);
+                $statement->execute([":id" => $id]);
+                $house = $statement->fetch(PDO::FETCH_ASSOC);
+                $zipcode = $house['zipcode'];
+                $street = $house['streetname'];
+            }
+            
+            
         ?>
 
         <form action="backend/reserveController.php" method="POST">
@@ -33,12 +46,12 @@
 
             <div class="form-group">
                 <label for="adress">Adress:</label>
-                <input type="text" name="adress" id="adress" class="form-input" placeholder="straatnaam 0" value="<?php echo $house['streetname']; ?>" readonly>
+                <input type="text" name="adress" id="adress" class="form-input" placeholder="straatnaam 0" value="<?php echo $street; ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label for="postcode">Postcode:</label>
-                <input type="postcode" name="postcode" id="postcode" class="form-input" placeholder="0000 AA" value="<?php echo $house['zipcode']; ?>" readonly>
+                <input type="postcode" name="postcode" id="postcode" class="form-input" placeholder="0000 AA" value="<?php echo $zipcode; ?>" readonly>
             </div>
 
             <div class="form-group">
