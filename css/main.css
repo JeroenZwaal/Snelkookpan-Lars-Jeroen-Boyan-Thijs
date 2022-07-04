@@ -157,6 +157,11 @@ footer{
   background-color: rgb(85, 85, 255);
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
 footer h3{
   font-size: 24px;
@@ -183,7 +188,12 @@ footer p{
 .price-input{
   width: 50px;
 }
-
+.generalinfo h2,p{
+  margin-left: 40px;
+}
+.generalinfo h1{
+  margin-left: 40px;
+}
 
 
 
