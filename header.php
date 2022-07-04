@@ -3,7 +3,6 @@
 <header>
 		<h1>Snelkookpan</h1>
 		<nav>
-			<a href = "general.php">Algemene informatie</a>
 			<a href = "houses.php">Huizen</a>
             <a href = "reserveren.php">Reserveren</a>
 			<?php if(!isset($_SESSION['user_id'])): ?>
