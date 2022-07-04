@@ -15,15 +15,15 @@
         <div class="filter">
             <p>Filter opties</p>
             <form action="backend/filterController.php" method="post">
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="location">Locatie</label>
                     <input class="input" type="text" name="location" id="location" placeholder="locatie">
                 </div>
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="rooms">Kamers</label>
                     <input class="input" type="number" name="rooms" id="rooms" placeholder="kamers">
                 </div>
-                <div class="form-group">
+                <div class="form-group-house">
                     <label for="price">Prijs</label>
                     <div>
                         <input class="price-input" type="number" name="price_min" id="price_min" placeholder="min">
@@ -31,13 +31,17 @@
                     </div>
                 </div>
                 <input type="hidden" name="action" value="filter">
-                <input class="submit" type="submit">
+                <input class="submit" type="submit" value="Filteren">
             </form>
 
         </div>
     
         <div class="grid-container">
             <?php 
+            if(!isset($_SESSION['query']))
+            {
+                $_SESSION['query'] = "SELECT * FROM houses WHERE status = 0";
+            }
             require_once 'backend/conn.php';
             if (!isset($_SESSION['query']))
             {
@@ -61,7 +65,7 @@
                             <p>&euro;<?php echo number_format($house['price'], 0, ",", ".") . "/week"; ?></p>
                         </div>
                         <div class="house-info-column">
-                            <a class="reserve" href="">Reserveer</a>
+                            <a class="reserve" href="reserveren.php?id=<?php echo $house['id']; ?>">Reserveer</a>
                         </div>
                     </div>
                     <p><?php echo $house['description']; ?></p>
