@@ -43,10 +43,6 @@
                 $_SESSION['query'] = "SELECT * FROM houses WHERE status = 0";
             }
             require_once 'backend/conn.php';
-            if (!isset($_SESSION['query']))
-            {
-                $_SESSION['query'] = "SELECT * FROM houses";
-            }
             $query = $_SESSION['query'];
             $statement = $conn->prepare($query);
             $statement->execute();
