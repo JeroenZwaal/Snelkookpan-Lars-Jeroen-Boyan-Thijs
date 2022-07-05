@@ -22,7 +22,7 @@
     <div class="container">
         <h1>Nieuw huis toevoegen</h1>
 
-        <form action="../backend/houseController.php" method="POST">
+        <form action="backend/houseController.php" method="POST">
             <input type="hidden" name="action" value="create">
             <input type="hidden" name="id" value="<?php echo $id; ?>">	
             <div class="form-group">

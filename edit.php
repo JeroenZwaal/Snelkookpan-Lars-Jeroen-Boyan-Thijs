@@ -30,6 +30,8 @@
         $statement->execute([":id" => $id]);
         $houses = $statement->fetch(PDO::FETCH_ASSOC);
         ?>
+
+
         <form action="backend/housesController.php" method="post" >
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $houses['id']; ?>">
