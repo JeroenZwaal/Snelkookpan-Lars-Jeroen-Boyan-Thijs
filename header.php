@@ -7,6 +7,7 @@
 			<a href = "houses.php">Huizen</a>
             <a href = "reserveren.php">Reserveren</a>
 			<a href = "create.php">Huis toevoegen</a>
+			<a href = "status.php">Status veranderen</a>
 			<?php if(!isset($_SESSION['user_id'])): ?>
 				<a href="<?php echo $base_url;?>inlog.php">Inloggen</a>
 			<?php else: ?>  

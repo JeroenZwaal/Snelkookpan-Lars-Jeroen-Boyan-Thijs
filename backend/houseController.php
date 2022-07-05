@@ -31,7 +31,7 @@ if(empty($price))
     $errors[] = "Vul de datum in";
 }
 //
-$descriptie = $_POST['descriptie'];
+$description = $_POST['description'];
 if(isset($errors))
 {
 	var_dump($errors);
@@ -58,16 +58,34 @@ if(empty($status))
 
 
 require_once 'conn.php';
-$query = "INSERT INTO houses (streetname, image, price, descriptie, area, zipcode, status) VALUES(:streetname, :image, :price, :descriptie, :area, :zipcode, :status)";
+$query = "INSERT INTO houses (streetname, image, price, description, area, zipcode, status) VALUES(:streetname, :image, :price, :description, :area, :zipcode, :status)";
 $statement = $conn->prepare($query);
 $statement->execute([
 	":streetname" => $streetname,
 	":image" => $image,
     ":price" => $price,
-	":descriptie" => $descriptie,
+	":description" => $description,
     ":area" => $area,
     ":zipcode" => $zipcode,
     ":status" => $status
 ]);
-header("Location:../meldingen/index.php?msg=Huis opgeslagen");
+header("Location:../houses.php?msg=Huis opgeslagen");
+}
+
+if($action == "update")
+{
+    $id = $_POST['id'];
+    $status = $_POST['status'];
+    if(empty($status))
+    {
+        $errors[] = "Vul een status in";
+    }
+
+    require_once 'conn.php';
+    $query = "UPDATE houses SET status = :status, WHERE id = :id";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":status" => $status,
+    ]);
+    header("Location:index.php?msg=Taak opgeslagen");
 }

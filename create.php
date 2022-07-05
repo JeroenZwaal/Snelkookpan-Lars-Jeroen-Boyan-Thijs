@@ -57,7 +57,7 @@
                     <option value="Bezet">Bezet</option>
                 </select>
             </div>
-            <input type="submit" value="Verstuur huis">
+            <input type="submit" value="Verstuur huis" name="submit" id="submit">
 
         </form>
     </div>  
