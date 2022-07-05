@@ -192,6 +192,13 @@ footer p{
 .generalinfo h1{
   margin-left: 40px;
 }
+img.reserverenImg{
+  width: 300px;
+  margin-left: 30px;
+}
+.reserveFlex{
+  display: flex;
+}
 
 
 
