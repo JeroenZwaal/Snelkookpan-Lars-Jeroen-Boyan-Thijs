@@ -82,7 +82,7 @@ if($action == "update")
     }
 
     require_once 'conn.php';
-    $query = "UPDATE houses SET status = :status, WHERE id = :id";
+    $query = "UPDATE houses SET  status = :status, WHERE id = :id";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":status" => $status,

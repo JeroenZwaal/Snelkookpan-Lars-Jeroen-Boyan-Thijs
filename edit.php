@@ -35,6 +35,13 @@
         <form action="backend/houseController.php" method="post" >
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $houses['id']; ?>">
+            <label for="status">Status:</label>	
+                                <select name="status" id="status">
+                                    <option value="0"> Vrij </option>
+                                    <option value="1"> Bezet </option>
+                                    </select>
+                                    <input type="submit" value="Submit" id="submit">
+        </form>
                 <div class="houses-container">
                     <img src="<?php echo $houses['image']; ?>" alt="">
                     <div class="houses-info">
@@ -43,19 +50,11 @@
                             <p><?php echo $houses['area']; ?></p>
                             <p>Kamers: <?php echo $houses['rooms']; ?></p>
                             <p>&euro;<?php echo number_format($houses['price'], 0, ",", ".") . "/week"; ?></p>
-                                <label for="status">Status:</label>	
-                                <select name="status" id="status">
-                                    <option value="0"> Vrij </option>
-                                    <option value="1"> Bezet </option>
                         </div>
                     </div>
                     <p><?php echo $houses['description']; ?></p>
                 </div>
-                <input type="submit" value="Submit" id="submit">
-            <?php
-            ?>
         </div>
-</form>
     </main>
     <?php require_once 'footer.php'; ?>
 </body>
