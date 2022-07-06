@@ -5,7 +5,6 @@
 		<nav>
 			<a href = "index.php">Home</a>
 			<a href = "houses.php">Huizen</a>
-            <a href = "reserveren.php">Reserveren</a>
 			<a href = "create.php">Huis toevoegen</a>
 			<a href = "status.php">Status veranderen</a>
 			<?php if(!isset($_SESSION['user_id'])): ?>
