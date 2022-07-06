@@ -36,12 +36,7 @@
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $houses['id']; ?>">
             <label for="status">Status:</label>	
-                                <select name="status" id="status">
-                                    <option value="0"> Vrij </option>
-                                    <option value="1"> Bezet </option>
-                                    </select>
-                                    <input type="submit" value="Submit" id="submit">
-        </form>
+                                
                 <div class="houses-container">
                     <img src="<?php echo $houses['image']; ?>" alt="">
                     <div class="houses-info">
@@ -54,6 +49,12 @@
                     </div>
                     <p><?php echo $houses['description']; ?></p>
                 </div>
+                <select name="status" id="status">
+                <option value="0"> Vrij </option>
+                <option value="1"> Bezet </option>
+                </select>
+                <input type="submit" value="Submit" id="submit">
+        </form>
         </div>
     </main>
     <?php require_once 'footer.php'; ?>
