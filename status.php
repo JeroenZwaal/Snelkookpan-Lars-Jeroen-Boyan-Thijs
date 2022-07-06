@@ -45,10 +45,8 @@
     
         <div class="grid-container">
             <?php 
-            if(!isset($_SESSION['query']))
-            {
-                $_SESSION['query'] = "SELECT * FROM houses WHERE status = 0";
-            }
+
+            $_SESSION['query'] = "SELECT * FROM houses";
             require_once 'backend/conn.php';
             $query = $_SESSION['query'];
             $statement = $conn->prepare($query);

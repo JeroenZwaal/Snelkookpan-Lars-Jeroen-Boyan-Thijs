@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Prijs: </label>
-                <input type="number" id="price" class="form-input"></textarea>
+                <input type="number" id="price" name="price" class="form-input">
             </div>
             <div class="form-group">
                 <label for="description">Descriptie:</label>

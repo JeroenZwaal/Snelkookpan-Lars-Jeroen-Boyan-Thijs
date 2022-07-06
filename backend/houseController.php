@@ -26,11 +26,10 @@ if(empty($image))
 }
 //
 $price = $_POST['price'];
-if(empty($price))
+if(!isset($price))
 {
-    $errors[] = "Vul de datum in";
+    $errors[] = "Vul de prijs in";
 }
-//
 $description = $_POST['description'];
 if(isset($errors))
 {
@@ -51,10 +50,15 @@ if(empty($zipcode))
 }
 //
 $status = $_POST['status'];
-if(empty($status))
+if(($status = "Vrij"))
 {
-    $errors[] = "Vul de status in";
+    $status = 1;
 }
+elseif(($status =="Bezet"))
+{
+    $status = 0;
+}
+
 
 
 require_once 'conn.php';
@@ -76,16 +80,20 @@ if($action == "update")
 {
     $id = $_POST['id'];
     $status = $_POST['status'];
-    if(empty($status))
+    if(($status = "Vrij"))
     {
-        $errors[] = "Vul een status in";
+        $status = 1;
+    }
+    elseif(($status =="Bezet"))
+    {
+        $status = 0;
     }
 
     require_once 'conn.php';
-    $query = "UPDATE houses SET  status = :status, WHERE id = :id";
+    $query = "UPDATE houses SET  status = :status WHERE id = :id";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":status" => $status,
     ]);
-    header("Location:index.php?msg=Taak opgeslagen");
+    header("Location:index.php?msg=Status opgeslagen");
 }
