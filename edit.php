@@ -35,8 +35,6 @@
         <form action="backend/houseController.php" method="post" >
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $houses['id']; ?>">
-            <label for="status">Status:</label>	
-                                
                 <div class="houses-container">
                     <img src="<?php echo $houses['image']; ?>" alt="">
                     <div class="houses-info">
@@ -49,7 +47,9 @@
                     </div>
                     <p><?php echo $houses['description']; ?></p>
                 </div>
-                <select name="status" id="status">
+                <label for="status">Status:</label>	
+                <select>
+                <option value="">Kies uw status</option>
                 <option value="0"> Vrij </option>
                 <option value="1"> Bezet </option>
                 </select>

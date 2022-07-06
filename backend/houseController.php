@@ -54,7 +54,7 @@ if(($status = "Vrij"))
 {
     $status = 1;
 }
-elseif(($status =="Bezet"))
+elseif(($status = "Bezet"))
 {
     $status = 0;
 }
@@ -82,15 +82,15 @@ if($action == "update")
     $status = $_POST['status'];
     if(($status = "Vrij"))
     {
-        $status = 1;
-    }
-    elseif(($status =="Bezet"))
-    {
         $status = 0;
+    }
+    elseif(($status = "Bezet"))
+    {
+        $status = 1;
     }
 
     require_once 'conn.php';
-    $query = "UPDATE houses SET  status = :status WHERE id = :id";
+    $query = "UPDATE houses SET status = :status WHERE id = :id";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":status" => $status,
