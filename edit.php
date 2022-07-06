@@ -32,7 +32,7 @@
         ?>
 
 
-        <form action="backend/housesController.php" method="post" >
+        <form action="backend/houseController.php" method="post" >
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $houses['id']; ?>">
                 <div class="houses-container">
@@ -55,6 +55,7 @@
             <?php
             ?>
         </div>
+</form>
     </main>
     <?php require_once 'footer.php'; ?>
 </body>
